@@ -1,0 +1,25 @@
+program SistemaFinanceiro;
+
+uses
+  Forms,
+  UMovimento in '..\FORMS\UMovimento.pas' {FrmMovimento},
+  UDM in '..\FORMS\UDM.pas' {DM: TDataModule},
+  UPesquisa in '..\FORMS\UPesquisa.pas' {FrmPesquisa},
+  UMenu in '..\FORMS\UMenu.pas' {FrmMenu},
+  UUsuario in '..\FORMS\UUsuario.pas' {FrmUsuario},
+  UPesquisaUsuario in '..\FORMS\UPesquisaUsuario.pas' {FrmPesquisaUsuario},
+  UInformacoes in '..\FORMS\UInformacoes.pas' {FrmInformacoes},
+  ULogin in '..\FORMS\ULogin.pas' {FrmLogin},
+  UCadastro in '..\FORMS\UCadastro.pas' {FrmCadastro},
+  UCalculadora in '..\FORMS\UCalculadora.pas' {FrmCalculadora};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TDM, DM);
+  Application.CreateForm(TFrmMenu, FrmMenu);
+  Application.CreateForm(TFrmCadastro, FrmCadastro);
+  Application.CreateForm(TFrmCalculadora, FrmCalculadora);
+  Application.Run;
+end.

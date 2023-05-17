@@ -1,0 +1,94 @@
+unit ULogin;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ExtCtrls, StdCtrls, Buttons;
+
+type
+  TFrmLogin = class(TForm)
+    LblNome: TLabel;
+    LblSenha: TLabel;
+    EdtNome: TEdit;
+    EdtSenha: TEdit;
+    BtnOk: TBitBtn;
+    BtnCancelar: TBitBtn;
+    Image1: TImage;
+    Bevel1: TBevel;
+    Bevel2: TBevel;
+    Bevel3: TBevel;
+    procedure BtnCancelarClick(Sender: TObject);
+    procedure BtnOkClick(Sender: TObject);
+    procedure FormKeyPress(Sender: TObject; var Key: Char);
+  private
+    { Private declarations }
+   Aldo: Integer;
+  public
+    { Public declarations }
+   Murilo: Integer;
+  end;
+
+var
+  FrmLogin: TFrmLogin;
+
+implementation
+
+uses UDM, UMenu;
+
+{$R *.dfm}
+
+procedure TFrmLogin.BtnCancelarClick(Sender: TObject);
+begin
+  Application.Terminate;
+end;
+
+procedure TFrmLogin.BtnOkClick(Sender: TObject);
+var Login, Senha: String;
+begin
+  //Validação de login, pesquisa de login no banco de  dados.
+  with dm.cdsLogin do
+  begin
+    dm.cdsLogin.Close;
+    dm.cdsLogin.Open;
+    dm.sqlLogin.CommandText := 'SELECT NOME,SENHA FROM USUARIO WHERE NOME = '''+EdtNome.Text+'''AND SENHA = '''+EdtSenha.Text+'''';
+    //dm.cdsLoginNOME.Value;
+    //dm.cdsLoginSENHA.Value;
+    //Login := dm.sqlLogin.;
+
+
+        ShowMessage(dm.cdsLoginNOME.Value);
+    ShowMessage(dm.cdsLoginSENHA.Value);
+  end;
+
+  //Se não encontrar nada
+  if (Login <> EdtNome.Text) then
+  begin
+    Application.MessageBox('Usuario não encontrado', 'Usuario incorreto', MB_ICONINFORMATION+MB_OK);
+    Exit;
+  end
+  else
+  //Se não, va para o Menu
+  begin
+    FrmMenu := TFrmMenu.Create(self);
+    FrmMenu.Show;
+    try
+
+    finally
+      FrmMenu.Free;
+      FrmMenu:= nil;
+    end;
+  end;
+end;
+
+procedure TFrmLogin.FormKeyPress(Sender: TObject; var Key: Char);
+begin
+  //Enter igual ao Tab
+  if Key = #13 then
+  begin
+    Key:=#0;
+    Perform(wm_NextDlgCtl,0,0);
+  end;
+end;
+
+end.
