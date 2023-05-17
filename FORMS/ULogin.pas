@@ -18,6 +18,7 @@ type
     Bevel1: TBevel;
     Bevel2: TBevel;
     Bevel3: TBevel;
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure BtnCancelarClick(Sender: TObject);
     procedure BtnOkClick(Sender: TObject);
     procedure FormKeyPress(Sender: TObject; var Key: Char);
@@ -32,7 +33,7 @@ var
 
 implementation
 
-uses UDM, UMenu;
+uses UDM, UMenu, UMensagem;
 
 {$R *.dfm}
 
@@ -59,11 +60,20 @@ begin
   //Se não pare
   else
   begin
-    Application.MessageBox('Usuario ou senha incorreto','Incorreto', MB_ICONEXCLAMATION+MB_OK);
+    msg.Erro('User incorrect','Please correct the user or password for continue');
     EdtNome.Clear;
     EdtSenha.Clear;
     EdtNome.SetFocus;
     Abort;
+  end;
+end;
+
+procedure TFrmLogin.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key = vk_escape then
+  begin
+    Close
   end;
 end;
 

@@ -11,8 +11,8 @@ object DM: TDM
     Params.Strings = (
       'DriverName=Interbase'
       
-        'Database=C:\Documents and Settings\Aldo\Meus documentos\Projetos' +
-        ' Delphi\Sistema-Financeiro\EXE\DADOS\FINANCEIRO.FDB'
+        'Database=localhost:\Users\user\OneDrive\Documentos\GitHub\Financ' +
+        'ial-System\EXE\DADOS\FINANCEIRO.FDB'
       'RoleName=RoleName'
       'User_Name=sysdba'
       'Password=masterkey'
@@ -65,16 +65,15 @@ object DM: TDM
   end
   object dspMovimento: TDataSetProvider
     DataSet = sqlMovimento
-    Left = 25
-    Top = 110
+    Left = 49
+    Top = 54
   end
   object cdsMovimento: TClientDataSet
-    Active = True
     Aggregates = <>
     Params = <>
     ProviderName = 'dspMovimento'
-    Left = 30
-    Top = 155
+    Left = 78
+    Top = 53
     object cdsMovimentoIDMOVIMENTO: TIntegerField
       FieldName = 'IDMOVIMENTO'
       Required = True
@@ -103,78 +102,78 @@ object DM: TDM
   end
   object dtsMovimento: TDataSource
     DataSet = cdsMovimento
-    Left = 25
-    Top = 210
-  end
-  object dtsPesquisa: TDataSource
-    DataSet = cdsPesquisa
     Left = 105
-    Top = 210
+    Top = 53
   end
-  object cdsPesquisa: TClientDataSet
+  object dtsPesquisaMov: TDataSource
+    DataSet = cdsPesquisaMov
+    Left = 112
+    Top = 109
+  end
+  object cdsPesquisaMov: TClientDataSet
     Active = True
     Aggregates = <>
     Params = <>
-    ProviderName = 'dspPesquisa'
-    Left = 105
-    Top = 155
-    object cdsPesquisaIDMOVIMENTO: TIntegerField
+    ProviderName = 'dspPesquisaMov'
+    Left = 81
+    Top = 109
+    object cdsPesquisaMovIDMOVIMENTO: TIntegerField
       FieldName = 'IDMOVIMENTO'
       Required = True
     end
-    object cdsPesquisaCADASTRO: TDateField
+    object cdsPesquisaMovCADASTRO: TDateField
       FieldName = 'CADASTRO'
       Required = True
     end
-    object cdsPesquisaUSUARIO: TStringField
+    object cdsPesquisaMovUSUARIO: TStringField
       FieldName = 'USUARIO'
       Required = True
       Size = 100
     end
-    object cdsPesquisaTIPO: TStringField
+    object cdsPesquisaMovTIPO: TStringField
       FieldName = 'TIPO'
       Required = True
       Size = 60
     end
-    object cdsPesquisaVALOR: TFMTBCDField
+    object cdsPesquisaMovVALOR: TFMTBCDField
       FieldName = 'VALOR'
       Required = True
       Precision = 15
       Size = 2
     end
   end
-  object dspPesquisa: TDataSetProvider
-    DataSet = sqlPesquisa
-    Left = 105
+  object dspPesquisaMov: TDataSetProvider
+    DataSet = sqlPesquisaMov
+    Left = 49
     Top = 110
   end
-  object sqlPesquisa: TSQLDataSet
+  object sqlPesquisaMov: TSQLDataSet
     SchemaName = 'sysdba'
     CommandText = 'SELECT * FROM MOVIMENTO'#13#10'ORDER BY IDMOVIMENTO'
     MaxBlobSize = -1
     Params = <>
     SQLConnection = Conexao
-    Left = 105
-    Top = 60
-    object sqlPesquisaIDMOVIMENTO: TIntegerField
+    Left = 17
+    Top = 108
+    object sqlPesquisaMovIDMOVIMENTO: TIntegerField
       FieldName = 'IDMOVIMENTO'
       Required = True
     end
-    object sqlPesquisaCADASTRO: TDateField
+    object sqlPesquisaMovCADASTRO: TDateField
       FieldName = 'CADASTRO'
       Required = True
     end
-    object sqlPesquisaUSUARIO: TStringField
+    object sqlPesquisaMovUSUARIO: TStringField
       FieldName = 'USUARIO'
       Required = True
       Size = 100
     end
-    object sqlPesquisaTIPO: TStringField
+    object sqlPesquisaMovTIPO: TStringField
       FieldName = 'TIPO'
       Required = True
       Size = 60
     end
-    object sqlPesquisaVALOR: TFMTBCDField
+    object sqlPesquisaMovVALOR: TFMTBCDField
       FieldName = 'VALOR'
       Required = True
       Precision = 15
@@ -187,21 +186,20 @@ object DM: TDM
     MaxBlobSize = -1
     Params = <>
     SQLConnection = Conexao
-    Left = 180
-    Top = 60
+    Left = 20
+    Top = 164
   end
   object dspUsuario: TDataSetProvider
     DataSet = sqlUsuario
-    Left = 180
-    Top = 110
+    Left = 52
+    Top = 164
   end
   object cdsUsuario: TClientDataSet
-    Active = True
     Aggregates = <>
     Params = <>
     ProviderName = 'dspUsuario'
-    Left = 180
-    Top = 155
+    Left = 84
+    Top = 163
     object cdsUsuarioIDUSUARIO: TIntegerField
       FieldName = 'IDUSUARIO'
       Required = True
@@ -228,21 +226,20 @@ object DM: TDM
   end
   object dtsUsuario: TDataSource
     DataSet = cdsUsuario
-    Left = 180
-    Top = 210
+    Left = 115
+    Top = 163
   end
   object dtsLogin: TDataSource
     DataSet = cdsLogin
-    Left = 275
-    Top = 210
+    Left = 119
+    Top = 223
   end
   object cdsLogin: TClientDataSet
-    Active = True
     Aggregates = <>
     Params = <>
     ProviderName = 'dspLogin'
-    Left = 275
-    Top = 160
+    Left = 79
+    Top = 222
     object cdsLoginIDUSUARIO: TIntegerField
       FieldName = 'IDUSUARIO'
       Required = True
@@ -273,17 +270,66 @@ object DM: TDM
   end
   object dspLogin: TDataSetProvider
     DataSet = sqlLogin
-    Left = 275
-    Top = 110
+    Left = 48
+    Top = 221
   end
   object sqlLogin: TSQLDataSet
     SchemaName = 'sysdba'
-    Active = True
     CommandText = 'SELECT * FROM USUARIO'
     MaxBlobSize = -1
     Params = <>
     SQLConnection = Conexao
-    Left = 275
-    Top = 60
+    Left = 19
+    Top = 220
+  end
+  object sqlPesquisaUsu: TSQLDataSet
+    SchemaName = 'sysdba'
+    CommandText = 'SELECT * FROM USUARIO'#13#10'ORDER BY IDUSUARIO'
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = Conexao
+    Left = 188
+    Top = 220
+  end
+  object dspPesquisaUsu: TDataSetProvider
+    DataSet = sqlPesquisaUsu
+    Left = 220
+    Top = 220
+  end
+  object cdsPesquisaUsu: TClientDataSet
+    Active = True
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'dspUsuario'
+    Left = 252
+    Top = 219
+    object IntegerField1: TIntegerField
+      FieldName = 'IDUSUARIO'
+      Required = True
+    end
+    object StringField1: TStringField
+      FieldName = 'NOME'
+      Required = True
+      Size = 100
+    end
+    object StringField2: TStringField
+      FieldName = 'SENHA'
+      Required = True
+      Size = 30
+    end
+    object StringField3: TStringField
+      FieldName = 'TIPO'
+      Required = True
+      Size = 30
+    end
+    object DateField1: TDateField
+      FieldName = 'CADASTRO'
+      Required = True
+    end
+  end
+  object dtsPesquisaUsu: TDataSource
+    DataSet = cdsPesquisaUsu
+    Left = 283
+    Top = 219
   end
 end

@@ -29,6 +29,9 @@ type
     btnClientes: TSpeedButton;
     Ferramentas1: TMenuItem;
     Calculadora1: TMenuItem;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure BtnMovimentoClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
     procedure btnClientesClick(Sender: TObject);
     procedure Calculadora1Click(Sender: TObject);
     procedure FormKeyPress(Sender: TObject; var Key: Char);
@@ -54,16 +57,29 @@ var
 
 implementation
 
-uses UMovimento, UPesquisa, UUsuario, UPesquisaUsuario, UInformacoes, ULogin,
-  UDM, UCalculadora, ULoginUsuario;
+uses    UInformacoes, ULogin,
+  UDM, UCalculadora , UCadMovimentacao, UMovimentacao, UCadUsuario, UUsuarios,
+  ULoginUsuario;
+
 
 {$R *.dfm}
 
 procedure TFrmMenu.btnClientesClick(Sender: TObject);
 begin
-  FrmMenu.Close;
-  FrmPesquisaUsuario := TFrmPesquisaUsuario.create(nil);
-  FrmPesquisaUsuario.ShowModal
+//  frm
+end;
+
+procedure TFrmMenu.BtnMovimentoClick(Sender: TObject);
+begin
+  //Abre o formulario de Movimento
+  FrmMovimento := TFrmMovimento.Create (self);
+  FrmMovimento.ShowModal;
+  try
+
+  finally
+  FrmMovimento.free;
+  FrmMovimento:= nil;
+  end;
 end;
 
 procedure TFrmMenu.BtnSairClick(Sender: TObject);
@@ -81,6 +97,7 @@ procedure TFrmMenu.BtnTrocaDeUsuarioClick(Sender: TObject);
 begin
   //Troca de usuario
   FrmMenu.Hide;
+  FrmLogin.Visible := True;
   FrmLogin.EdtNome.Clear;
   FrmLogin.EdtSenha.Clear;
   FrmLogin.EdtNome.SetFocus;
@@ -103,6 +120,16 @@ procedure TFrmMenu.Calculadora1Click(Sender: TObject);
 begin
   FrmCalculadora := TFrmCalculadora.create(nil);
   FrmCalculadora.ShowModal;
+end;
+
+procedure TFrmMenu.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Application.Terminate;
+end;
+
+procedure TFrmMenu.FormCreate(Sender: TObject);
+begin
+  frmLogin.Visible := False;
 end;
 
 procedure TFrmMenu.FormKeyPress(Sender: TObject; var Key: Char);

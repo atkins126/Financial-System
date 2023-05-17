@@ -22,5 +22,17 @@
     <Transaction>2023/03/30 16:16:05.401.dfm,C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Calculadora\FORMS\UPrincila.dfm=</Transaction>
     <Transaction>2023/03/30 16:16:58.517.pas,C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Sistema-Financeiro\FORMS\UCalculadora.pas=</Transaction>
     <Transaction>2023/03/30 16:17:11.686.pas,C:\Documents and Settings\Aldo\Meus documentos\Projetos Delphi\Sistema-Financeiro\FORMS\UCalculadora.pas=</Transaction>
+    <Transaction>2023/05/17 14:38:50.264.pas,C:\Users\user\OneDrive\Documentos\GitHub\Financial-System\FORMS\ULoginUsuario.pas=</Transaction>
+    <Transaction>2023/05/17 14:38:50.264.dfm,C:\Users\user\OneDrive\Documentos\GitHub\Financial-System\FORMS\ULoginUsuario.dfm=</Transaction>
+    <Transaction>2023/05/17 15:13:20.190.pas,C:\Users\user\OneDrive\Documentos\GitHub\Financial-System\FORMS\UPesquisa.pas=C:\Users\user\OneDrive\Documentos\GitHub\Financial-System\FORMS\UMovimentacao.pas</Transaction>
+    <Transaction>2023/05/17 15:13:20.190.dfm,C:\Users\user\OneDrive\Documentos\GitHub\Financial-System\FORMS\UPesquisa.dfm=C:\Users\user\OneDrive\Documentos\GitHub\Financial-System\FORMS\UMovimentacao.dfm</Transaction>
+    <Transaction>2023/05/17 15:17:14.338.pas,C:\Users\user\OneDrive\Documentos\GitHub\Financial-System\FORMS\UMovimento.pas=C:\Users\user\OneDrive\Documentos\GitHub\Financial-System\FORMS\UCadMovimentacao.pas</Transaction>
+    <Transaction>2023/05/17 15:17:14.338.dfm,C:\Users\user\OneDrive\Documentos\GitHub\Financial-System\FORMS\UMovimento.dfm=C:\Users\user\OneDrive\Documentos\GitHub\Financial-System\FORMS\UCadMovimentacao.dfm</Transaction>
+    <Transaction>2023/05/17 15:23:04.804.pas,C:\Users\user\OneDrive\Documentos\GitHub\Financial-System\FORMS\UCadastro.pas=</Transaction>
+    <Transaction>2023/05/17 15:23:04.804.dfm,C:\Users\user\OneDrive\Documentos\GitHub\Financial-System\FORMS\UCadastro.dfm=</Transaction>
+    <Transaction>2023/05/17 15:38:30.448.pas,C:\Users\user\OneDrive\Documentos\GitHub\Financial-System\FORMS\UPesquisaUsuario.pas=C:\Users\user\OneDrive\Documentos\GitHub\Financial-System\FORMS\UUsuarios.pas</Transaction>
+    <Transaction>2023/05/17 15:38:30.448.dfm,C:\Users\user\OneDrive\Documentos\GitHub\Financial-System\FORMS\UPesquisaUsuario.dfm=C:\Users\user\OneDrive\Documentos\GitHub\Financial-System\FORMS\UUsuarios.dfm</Transaction>
+    <Transaction>2023/05/17 15:38:43.817.pas,C:\Users\user\OneDrive\Documentos\GitHub\Financial-System\FORMS\UUsuario.pas=C:\Users\user\OneDrive\Documentos\GitHub\Financial-System\FORMS\UCadUsuario.pas</Transaction>
+    <Transaction>2023/05/17 15:38:43.817.dfm,C:\Users\user\OneDrive\Documentos\GitHub\Financial-System\FORMS\UUsuario.dfm=C:\Users\user\OneDrive\Documentos\GitHub\Financial-System\FORMS\UCadUsuario.dfm</Transaction>
   </Transactions>
 </BorlandProject>

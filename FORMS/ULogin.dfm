@@ -12,6 +12,7 @@ object FrmLogin: TFrmLogin
   Font.Style = []
   KeyPreview = True
   OldCreateOrder = False
+  OnKeyDown = FormKeyDown
   OnKeyPress = FormKeyPress
   PixelsPerInch = 96
   TextHeight = 13

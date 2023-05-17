@@ -2,7 +2,7 @@ object FrmMenu: TFrmMenu
   Left = 0
   Top = 0
   Caption = 'Menu'
-  ClientHeight = 652
+  ClientHeight = 672
   ClientWidth = 892
   Color = clTeal
   Font.Charset = DEFAULT_CHARSET
@@ -14,6 +14,8 @@ object FrmMenu: TFrmMenu
   OldCreateOrder = False
   Position = poDesigned
   WindowState = wsMaximized
+  OnClose = FormClose
+  OnCreate = FormCreate
   OnKeyPress = FormKeyPress
   OnShow = FormShow
   PixelsPerInch = 96
@@ -21,8 +23,8 @@ object FrmMenu: TFrmMenu
   object LblCentro: TLabel
     Left = 750
     Top = 125
-    Width = 540
-    Height = 63
+    Width = 550
+    Height = 57
     Caption = 'SISTEMA FINANCEIRO '
     Font.Charset = GB2312_CHARSET
     Font.Color = clWindow
@@ -1100,6 +1102,7 @@ object FrmMenu: TFrmMenu
         0000000000000000000000000000000000000000000000000000}
       Layout = blGlyphTop
       ParentFont = False
+      OnClick = BtnMovimentoClick
     end
     object BtnTrocaDeUsuario: TSpeedButton
       Left = 250
@@ -2166,7 +2169,7 @@ object FrmMenu: TFrmMenu
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 633
+    Top = 653
     Width = 892
     Height = 19
     Panels = <

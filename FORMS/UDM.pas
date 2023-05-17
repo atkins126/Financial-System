@@ -22,20 +22,20 @@ type
     cdsMovimentoUSUARIO: TStringField;
     cdsMovimentoTIPO: TStringField;
     cdsMovimentoVALOR: TFMTBCDField;
-    dtsPesquisa: TDataSource;
-    cdsPesquisa: TClientDataSet;
-    dspPesquisa: TDataSetProvider;
-    sqlPesquisa: TSQLDataSet;
-    sqlPesquisaIDMOVIMENTO: TIntegerField;
-    sqlPesquisaCADASTRO: TDateField;
-    sqlPesquisaUSUARIO: TStringField;
-    sqlPesquisaTIPO: TStringField;
-    sqlPesquisaVALOR: TFMTBCDField;
-    cdsPesquisaIDMOVIMENTO: TIntegerField;
-    cdsPesquisaCADASTRO: TDateField;
-    cdsPesquisaUSUARIO: TStringField;
-    cdsPesquisaTIPO: TStringField;
-    cdsPesquisaVALOR: TFMTBCDField;
+    dtsPesquisaMov: TDataSource;
+    cdsPesquisaMov: TClientDataSet;
+    dspPesquisaMov: TDataSetProvider;
+    sqlPesquisaMov: TSQLDataSet;
+    sqlPesquisaMovIDMOVIMENTO: TIntegerField;
+    sqlPesquisaMovCADASTRO: TDateField;
+    sqlPesquisaMovUSUARIO: TStringField;
+    sqlPesquisaMovTIPO: TStringField;
+    sqlPesquisaMovVALOR: TFMTBCDField;
+    cdsPesquisaMovIDMOVIMENTO: TIntegerField;
+    cdsPesquisaMovCADASTRO: TDateField;
+    cdsPesquisaMovUSUARIO: TStringField;
+    cdsPesquisaMovTIPO: TStringField;
+    cdsPesquisaMovVALOR: TFMTBCDField;
     sqlUsuario: TSQLDataSet;
     dspUsuario: TDataSetProvider;
     cdsUsuario: TClientDataSet;
@@ -55,6 +55,15 @@ type
     cdsLoginTIPO: TStringField;
     cdsLoginCADASTRO: TDateField;
     cdsLoginNIVEL: TIntegerField;
+    sqlPesquisaUsu: TSQLDataSet;
+    dspPesquisaUsu: TDataSetProvider;
+    cdsPesquisaUsu: TClientDataSet;
+    IntegerField1: TIntegerField;
+    StringField1: TStringField;
+    StringField2: TStringField;
+    StringField3: TStringField;
+    DateField1: TDateField;
+    dtsPesquisaUsu: TDataSource;
   private
     { Private declarations }
   public
